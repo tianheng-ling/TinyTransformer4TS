@@ -1,0 +1,14 @@
+# clock
+ldc_set_location -site 35 [get_ports clk_16m]
+
+# SPI
+ldc_set_location -site 4 [get_ports spi_clk]
+ldc_set_location -site 6 [get_ports spi_ss_n]
+ldc_set_location -site 3 [get_ports spi_mosi]
+ldc_set_location -site 9 [get_ports spi_miso]
+ldc_set_location -site 11 [get_ports fpga_busy]
+
+# LEDs
+ldc_set_location -site 39 [get_ports rgb0]
+ldc_set_location -site 40 [get_ports rgb1]
+ldc_set_location -site 41 [get_ports rgb2]
