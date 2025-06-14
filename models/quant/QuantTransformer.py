@@ -6,7 +6,7 @@ from elasticai.creator.nn.integer.linear import Linear
 from models.fp32.PE import PositionalEncoding
 from elasticai.creator.nn.integer.addition import Addition
 from elasticai.creator.nn.integer.encoder import Encoder
-from elasticai.creator.nn.integer.avgpooling1dflatten import AVGPooling1dFlatten
+from elasticai.creator.nn.integer.avgpooling1d import AVGPooling1d
 from elasticai.creator.nn.integer.vhdl_test_automation.file_save_utils import (
     save_quant_data,
 )
@@ -61,22 +61,21 @@ class QuantTransformer(nn.Module):
             quant_data_dir=self.quant_data_dir,
             device=device,
         )
-        self.avg_pooling = (
-            AVGPooling1dFlatten(  # assume (batch_size, channels, seq_len)
-                name="average_pooling",
-                in_features=window_size,
-                out_features=1,  # due to flatten
-                in_num_dimensions=d_model,
-                out_num_dimensions=d_model,
-                quant_bits=self.quant_bits,
-                quant_data_dir=self.quant_data_dir,
-                device=device,
-            )
+        self.avg_pooling = AVGPooling1d(  # assume (batch_size, channels, window_size)
+            name="average_pooling",
+            in_features=d_model,
+            out_features=d_model,
+            in_num_dimensions=window_size,
+            out_num_dimensions=1,
+            quant_bits=self.quant_bits,
+            quant_data_dir=self.quant_data_dir,
+            device=device,
         )
         self.output_linear = Linear(
             name="output_linear",
             in_features=d_model,
             out_features=num_out_features,
+            num_dimensions=1,
             bias=True,
             quant_bits=self.quant_bits,
             quant_data_dir=self.quant_data_dir,
@@ -131,7 +130,7 @@ class QuantTransformer(nn.Module):
                 q_inputs=q_pos_inputs,
             )
             q_avg_pooling_outputs = self.avg_pooling.int_forward(
-                q_inputs=q_encoder_outputs.permute(0, 2, 1),
+                q_inputs=q_encoder_outputs
             )
             q_outputs = self.output_linear.int_forward(
                 q_inputs=q_avg_pooling_outputs,
@@ -154,9 +153,7 @@ class QuantTransformer(nn.Module):
                 given_inputs_QParams=self.pos_info_addition.outputs_QParams,
             )
             avg_pooling_outputs = self.avg_pooling.forward(
-                inputs=encoder_outputs.permute(
-                    0, 2, 1
-                ),  # to (batch_size, channels, seq_len)
+                inputs=encoder_outputs,
                 given_inputs_QParams=self.encoder.outputs_QParams,
             )
             outputs = self.output_linear.forward(

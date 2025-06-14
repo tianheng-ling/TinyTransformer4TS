@@ -76,11 +76,14 @@ architecture rtl of ${name} is
         encoder_enable <= add_pos_info_done;
         gap_enable <= encoder_done;
         output_linear_enable <= gap_done;
+        done <= output_linear_done;
+
         input_linear_clock <= clock;
         add_pos_info_clock <= clock;
         encoder_clock <= clock;
         gap_clock <= clock;
         output_linear_clock <= clock;
+
         x_address <= input_linear_x_address;
         input_linear_y_address <= add_pos_info_x_1_address;
         pos_info_address <= add_pos_info_x_2_address;
@@ -88,6 +91,7 @@ architecture rtl of ${name} is
         encoder_y_address <= gap_x_address;
         gap_y_address <= output_linear_x_address;
         output_linear_y_address <= y_address;
+
         input_linear_x <= x;
         add_pos_info_x_1 <= input_linear_y;
         add_pos_info_x_2 <= pos_info;
@@ -95,7 +99,7 @@ architecture rtl of ${name} is
         gap_x <= encoder_y;
         output_linear_x <= gap_y;
         y <= output_linear_y;
-        done <= output_linear_done;
+        
         inst_${input_linear_name}: entity ${work_library_name}.${input_linear_name}(rtl)
         port map (
             enable => input_linear_enable,
