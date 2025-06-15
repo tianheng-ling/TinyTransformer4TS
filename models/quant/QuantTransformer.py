@@ -19,6 +19,7 @@ class QuantTransformer(nn.Module):
         num_in_features = kwargs.get("num_in_features")
         window_size = kwargs.get("window_size")
         d_model = kwargs.get("d_model")
+        ffn_dim = kwargs.get("ffn_dim", 4 * d_model)
         num_out_features = kwargs.get("num_out_features")
 
         self.name = kwargs.get("name")
@@ -54,6 +55,7 @@ class QuantTransformer(nn.Module):
             name="encoder",
             window_size=window_size,
             d_model=d_model,
+            ffn_dim=ffn_dim,
             nhead=kwargs.get("nhead"),
             num_enc_layers=kwargs.get("num_enc_layers"),
             quant_bits=self.quant_bits,
