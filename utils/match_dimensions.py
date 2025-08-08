@@ -2,7 +2,7 @@ def match_dimensions(task_flag: str, pred):
     if task_flag == "classification":
         pred = pred.squeeze(1)
     elif task_flag == "forecasting":
-        pred = pred.unsqueeze(1)
+        pred = pred.squeeze(1)
     elif task_flag == "anomaly_detection":
         pred = pred
     else:
