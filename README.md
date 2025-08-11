@@ -23,7 +23,7 @@ This repository provides:
 
 If you use this repository, please consider citing our paper:
 ```bibtex
-@misc{ling2025automatingversatiletimeseriesanalysis,
+@misc{ling2025automating,
   title     = {Automating Versatile Time-Series Analysis with Tiny Transformers on Embedded FPGAs},
   author    = {Tianheng Ling and Chao Qian and Lukas Johannes Haßler and Gregor Schiele},
   year      = {2025},
@@ -47,27 +47,44 @@ Deployment scripts and bitstreams for both platforms are included.
 
 ---
 
-## 🚀 Getting Started
-#### 1️⃣ Clone and Set Up
+## Getting Started
+#### 1. Clone and Set Up
 ```
-git clone https://github.com/Edwina1030/TinyTransformer4TS.git
+git clone https://github.com/tianheng-ling/TinyTransformer4TS
 cd TinyTransformer4TS
 ```
-#### 2️⃣ Create and Activate Virtual Environment
+#### 2. Create and Activate Virtual Environment
 ```
 python -m venv venv --python=python3.11
 source venv/bin/activate  # On macOS/Linux
 venv\Scripts\activate     # On Windows
 ```
 
-#### 3️⃣ Install Dependencies
+#### 3. Install Dependencies
 ```
 pip install -r requirements.txt
 ```
 
-#### 4️⃣ Verify Installation
-```
-python -c "import torch; print(torch.__version__)"
+---
+
+## Usage
+All runnable scripts are organized in the **`scripts/`** folder for convenience: You can **run scripts directly** from their folders.  
+For example:
+```bash
+# Train FP32 model
+bash scripts/normal/fp32/forecasting/train.sh
+
+# Model QAT
+bash scripts/normal/quant/forecasting/train.sh
+
+# Run full FPGA synthesis and analysis after model QAT
+bash scripts/hardware/amd/hw_analysis_pipeline.sh
+
+# Train FP32 model with Optuna search
+bash scripts/optuna/fp32_forecasting.sh
+
+# Model QAT with bi-objective Optuna search
+bash scripts/optuna/quant_forecasting.sh
 ```
 
 ---
@@ -75,9 +92,9 @@ python -c "import torch; print(torch.__version__)"
 ### Related Repositories
 This project is part of a broader family of FPGA-optimized time-series models. You may also be interested in:
 
-- **OnDeviceSoftSensorMLPs** → [GitHub Repository](https://github.com/Edwina1030/OnDeviceSoftSensorMLP)  
+- **OnDeviceSoftSensorMLPs** → [GitHub Repository](https://github.com/tianheng-ling/OnDeviceSoftSensorMLP)  
+- **OnDeviceLSTM** → [GitHub Repository](https://github.com/tianheng-ling/EdgeOverflowForecast)
 - **OnDevice1D-(Sep)CNN** → comming soon
-- **OnDeviceLSTM** → comming soon
 
 ---
 
