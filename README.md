@@ -94,6 +94,7 @@ This project is part of a broader family of FPGA-optimized time-series models. Y
 
 - **OnDeviceSoftSensorMLPs** → [GitHub Repository](https://github.com/tianheng-ling/OnDeviceSoftSensorMLP)  
 - **OnDeviceLSTM** → [GitHub Repository](https://github.com/tianheng-ling/EdgeOverflowForecast)
+- **OnDeviceRunningGaitRecognition** → [GitHub Repository](https://github.com/tianheng-ling/StrikeWatch)
 - **OnDevice1D-(Sep)CNN** → coming soon
 
 ---
