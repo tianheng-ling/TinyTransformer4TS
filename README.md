@@ -92,10 +92,11 @@ bash scripts/optuna/quant_forecasting.sh
 ### Related Repositories
 This project is part of a broader family of FPGA-optimized time-series models. You may also be interested in:
 
-- **OnDeviceSoftSensorMLPs** → [GitHub Repository](https://github.com/tianheng-ling/OnDeviceSoftSensorMLP)  
-- **OnDeviceLSTM** → [GitHub Repository](https://github.com/tianheng-ling/EdgeOverflowForecast)
-- **OnDeviceRunningGaitRecognition** → [GitHub Repository](https://github.com/tianheng-ling/StrikeWatch)
-- **OnDevice1D-(Sep)CNN** → coming soon
+- **OnDevice-MLP** → [GitHub Repository](https://github.com/tianheng-ling/OnDeviceSoftSensorMLP)  
+- **OnDevice-1D(Sep)CNN** → [GitHub Repository](https://github.com/tianheng-ling/Smatable)
+- **OnDevice-LSTM** → [GitHub Repository](https://github.com/tianheng-ling/EdgeOverflowForecast)
+- **OnDevice Running Gait Recognition** → [GitHub Repository](https://github.com/tianheng-ling/StrikeWatch)
+- **OnDevice Swipe Direction Recognition** → [GitHub Repository](https://github.com/tianheng-ling/Smatable)
 
 ---
 
