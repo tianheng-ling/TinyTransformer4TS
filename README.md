@@ -18,19 +18,16 @@ This repository provides:
 ### Corresponding Paper
 
 **Automating Versatile Time-Series Analysis with Tiny Transformers on Embedded FPGAs**  
-📌 Accepted at **IEEE Computer Society Annual Symposium on VLSI (ISVLSI) 2025**  
-📄 [Preprint (arXiv)](https://arxiv.org/abs/2505.17662) — _Camera-ready version coming soon_
-
-If you use this repository, please consider citing our paper:
+📌 Accepted at **IEEE Computer Society Annual Symposium on VLSI (ISVLSI) 2025**, if you use this repository, please consider citing our paper:
 ```bibtex
-@misc{ling2025automating,
-  title     = {Automating Versatile Time-Series Analysis with Tiny Transformers on Embedded FPGAs},
-  author    = {Tianheng Ling and Chao Qian and Lukas Johannes Haßler and Gregor Schiele},
-  year      = {2025},
-  eprint    = {2505.17662},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.LG},
-  url       = {https://arxiv.org/abs/2505.17662}
+@INPROCEEDINGS{11130202,
+  author={Ling, Tianheng and Qian, Chao and Haßler, Lukas Johannes and Schiele, Gregor},
+  booktitle={2025 IEEE Computer Society Annual Symposium on VLSI (ISVLSI)}, 
+  title={Automating Versatile Time-Series Analysis with Tiny Transformers on Embedded FPGAs}, 
+  year={2025},
+  volume={1},
+  pages={1-6},
+  doi={10.1109/ISVLSI65124.2025.11130202}
 }
 ```
 ---
@@ -106,4 +103,4 @@ This work is supported by the German Federal Ministry for Economic Affairs and C
 ---
 
 ###  Contact
-For questions or feedback, please feel free to open an issue or contact us at tianheng.ling@uni-due.de.
+For questions or feedback, please feel free to open an issue or contact us at ling.tianheng@gmail.com
