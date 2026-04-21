@@ -17,8 +17,8 @@ This repository provides:
 
 ### Corresponding Paper
 
-**Automating Versatile Time-Series Analysis with Tiny Transformers on Embedded FPGAs**  
-📌 Accepted at **IEEE Computer Society Annual Symposium on VLSI (ISVLSI) 2025**, if you use this repository, please consider citing our paper:
+📌 **Automating Versatile Time-Series Analysis with Tiny Transformers on Embedded FPGAs**  
+Accepted at **IEEE Computer Society Annual Symposium on VLSI (ISVLSI) 2025, if you use this repository, please consider citing our [paper](https://arxiv.org/abs/2505.17662):
 ```bibtex
 @INPROCEEDINGS{11130202,
   author={Ling, Tianheng and Qian, Chao and Haßler, Lukas Johannes and Schiele, Gregor},
@@ -89,11 +89,10 @@ bash scripts/optuna/quant_forecasting.sh
 ### Related Repositories
 This project is part of a broader family of FPGA-optimized time-series models. You may also be interested in:
 
-- **OnDevice-MLP** → [GitHub Repository](https://github.com/tianheng-ling/OnDeviceSoftSensorMLP)  
-- **OnDevice-1D(Sep)CNN** → [GitHub Repository](https://github.com/tianheng-ling/Smatable)
-- **OnDevice-LSTM** → [GitHub Repository](https://github.com/tianheng-ling/EdgeOverflowForecast)
-- **OnDevice Running Gait Recognition** → [GitHub Repository](https://github.com/tianheng-ling/StrikeWatch)
-- **OnDevice Swipe Direction Recognition** → [GitHub Repository](https://github.com/tianheng-ling/Smatable)
+- **On Device Flow Rate Forefasting with MLPs** → [GitHub Repository](https://github.com/tianheng-ling/OnDeviceSoftSensorMLP) 
+- **On Device Swipe Direction Recognition with 1D(Sep)CNNs** → [GitHub Repository](https://github.com/tianheng-ling/Smatable)
+- **On Device Sewage Overflow Forefasting with Transforemrs and LSTMs** → [GitHub Repository](https://github.com/tianheng-ling/EdgeOverflowForecast)
+- **On Device Running Gait Recognition with various time-series models** → [GitHub Repository](https://github.com/tianheng-ling/StrikeWatch)
 
 ---
 
