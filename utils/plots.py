@@ -94,7 +94,7 @@ def plot_custom_confusion_matrix(
     if normalize:
         cm = cm.astype("float") / cm.sum(axis=1, keepdims=True)
 
-    # 绘制热力图
+    # draw heatmap
     plt.figure(figsize=(6, 5))
     sns.heatmap(
         cm,

@@ -158,7 +158,7 @@ if __name__ == "__main__":
 
     # quantization config
     parser.add_argument(
-        "--quant_bits",
+        "--quant_bit",
         type=int,
         choices=[4, 6, 8],
         help="Number of bits to quantize the model",

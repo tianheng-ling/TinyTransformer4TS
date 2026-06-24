@@ -274,7 +274,7 @@ if __name__ == "__main__":
     parser.add_argument("--num_epochs", type=int)
     parser.add_argument("--exp_base_save_dir", type=str)
     # quantization configs
-    parser.add_argument("--quant_bits", type=int, choices=[4, 6, 8])
+    parser.add_argument("--quant_bit", type=int, choices=[4, 6, 8])
     # hw conversion configs
     parser.add_argument(
         "--subset_size",

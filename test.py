@@ -137,7 +137,7 @@ def test(
     elif task_flag == "classification":
         plot_confusion_matrix(
             labels=[item for sublist in test_targets for item in sublist],
-            preds=[item for sublist in test_targets for item in sublist],
+            preds=[item for sublist in test_preds for item in sublist],
             save_path=fig_save_dir,
             prefix=prefix,
         )
@@ -356,7 +356,7 @@ def test_ad(
         f"{prefix}test_FP": int(total_fp),
         f"{prefix}test_TP": int(total_tp),
         f"{prefix}test_FN": int(total_fn),
-        f"{prefix}test_FP": int(total_tn),
+        f"{prefix}test_TN": int(total_tn),
         f"{prefix}test_acc": f"{acc:.4f}",
         f"{prefix}test_precision": f"{pre:.4f}",
         f"{prefix}test_recall": f"{rec:.4f}",
